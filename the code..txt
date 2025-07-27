@@ -1,0 +1,87 @@
+// Pins for Motor 1 (left side)
+const int ENA = 9;
+const int IN1 = 8;
+const int IN2 = 7;
+
+// Pins for Motor 2 (right side)
+const int ENB = 3;
+const int IN3 = 5;
+const int IN4 = 4;
+
+void setup() {
+  // Set all pins as output
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  pinMode(ENB, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+}
+
+void loop() {
+  // 1. Forward for 30 seconds
+  forward();
+  delay(30000);
+
+  // 2. Backward for 60 seconds
+  backward();
+  delay(60000);
+
+  // 3. Alternate left/right for 1 minute (each 1 second)
+  for (int i = 0; i < 30; i++) {
+    right();
+    delay(1000);
+    left();
+    delay(1000);
+  }
+
+  // Stop motors after movement
+  stopMotors();
+  while (true);  // Infinite stop
+}
+
+// ====== Movement Functions ======
+
+void forward() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 255);
+  analogWrite(ENB, 255);
+}
+
+void backward() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  analogWrite(ENA, 255);
+  analogWrite(ENB, 255);
+}
+
+void right() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+  analogWrite(ENA, 255);
+  analogWrite(ENB, 255);
+}
+
+void left() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  analogWrite(ENA, 255);
+  analogWrite(ENB, 255);
+}
+
+void stopMotors() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
