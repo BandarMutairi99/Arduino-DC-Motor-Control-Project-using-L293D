@@ -1,6 +1,7 @@
 # Arduino-DC-Motor-Control-Project-using-L293D
 
-This project demonstrates how to control two DC motors using an Arduino UNO and an L293D motor driver IC. The motors perform a timed sequence of movements: forward, backward, and alternating left/right turns. The enable pins are driven using analogWrite() for full-speed control.
+This project demonstrates how to control two DC motors using an Arduino UNO and an L293D motor driver IC. The motors perform a timed sequence of movements: forward, backward, and alternating left/right turns. 
+
 
 # Objectives
 
