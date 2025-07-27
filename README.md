@@ -27,4 +27,34 @@ This project demonstrates how to control two DC motors using an Arduino UNO and 
 
 # the circuit
 
+<img width="751" height="323" alt="Image" src="https://github.com/user-attachments/assets/df62763f-44ce-4715-8dac-0100afeb2aa4" />
+
+
+# Circuit Connections
+
+Motor A (Left Side):
+ENA → Arduino pin 9 (PWM)
+
+IN1 → Arduino pin 8
+
+IN2 → Arduino pin 7
+
+Motor B (Right Side):
+ENB → Arduino pin 3 (PWM)
+
+IN3 → Arduino pin 5
+
+IN4 → Arduino pin 4
+
+Power:
+L293D VCC1 (logic) → 5V from Arduino
+
+L293D VCC2 (motor power) → 9V battery
+
+L293D GND (all grounds) → Common GND with Arduino and battery
+
+# References
+
+https://youtu.be/4I704RjOvgc?si=nNtC2qjGD0o9Vzrw
+
 
